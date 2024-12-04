@@ -1,0 +1,34 @@
+<template>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled Table</title>
+  <head>
+   
+  </head>
+  <h1>${rowData[0].name}</h1>
+  <require from="styles.css"></require>
+  <button click.delegate="openPanel(0)"> new button </button>
+  <button id="btn2"> new button2 </button>
+  <table class="acumatica-table" id="dataTable">
+    <!-- <script defer src="script.js"></script> -->
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <!-- Panel (Initially hidden) -->
+  <div id="panel" class="panel">
+    <h2>Details</h2>
+    <div id="panel-content">
+      <!-- Content will be injected by JavaScript -->
+    </div>
+    <button click.delegate="closePanel()">Close</button>
+   
+  </div>
+
+</template>
