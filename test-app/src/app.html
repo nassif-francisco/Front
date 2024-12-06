@@ -7,9 +7,11 @@
   </head>
   <h1>${rowData[0].name}</h1>
   <require from="styles.css"></require>
+  
   <button click.delegate="openPanel(0)"> new button </button>
   <button id="btn2"> new button2 </button>
   <table class="acumatica-table" id="dataTable">
+  <body>
     <!-- <script defer src="script.js"></script> -->
     <thead>
       <tr>
@@ -30,5 +32,5 @@
     <button click.delegate="closePanel()">Close</button>
    
   </div>
-
+</body>
 </template>

@@ -31,6 +31,14 @@ module.exports = ({ production }, { analyze, hmr, port, host }) => ({
   resolve: {
     extensions: ['.js'],
     modules: [srcDir, 'node_modules'],
+    // fallback: {
+    //   "child_process": false,
+    //   "os": false,
+    //   "path": false,
+    //   "stream": false,
+    //   "fs": false,
+    //   // and also other packages that are not found
+    // },
 
     alias: {
       // https://github.com/aurelia/dialog/issues/387

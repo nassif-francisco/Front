@@ -1,4 +1,11 @@
 import MyClass from "./script";
+// const { spawn } = require('child_process');
+// //import {PythonShell} from 'python-shell';
+// //let {PythonShell} = require('python-shell')
+// //const { spawn } = require('@child_process');
+// //import { spawn } from 'child_process';
+const file = require('file.json');
+
 
 export class App {
   message = 'Hello World!'
@@ -13,10 +20,13 @@ export class App {
 
     // Wait for jQuery to load, then execute jQuery code
     script.onload = () => {
-      $(document).ready(() => this.setButtonFunctionality());
-      $(document).ready(() => this.setTableFunctionality(this));
+      $(document).ready(() => 
+        {
+        this.setButtonFunctionality();
+        this.setTableFunctionality(this)
+        this.executePythonScript(this)
+        });
     };
-
     document.getElementsByTagName('head')[0].appendChild(script);
   }
 
@@ -43,6 +53,36 @@ export class App {
       });
     });
   }
+
+  executePythonScript(app)
+  {
+    // fetch('file.txt')
+    // .then(response => response.text())
+    // .then(text => console.log(text))
+
+    // const fetchedData = fetch('file.json')
+    //   .then(response => response.json());
+
+      console.log('JSON loaded via import', file.newvar);
+      //console.log('JSON loaded via fetch', fetchedData);
+  }
+
+  // executePythonScript(app)
+  // {
+  //   debugger;
+  //   // PythonShell.runString('x=1+1;print(x)', null).then(messages=>{
+  //   //   console.log('finished');
+  //   // });
+
+  //   const temperatures = []; // Store readings
+  //   const sensor = spawn('python', ['pythonscript.py']);
+  //   sensor.stdout.on('data', function(data) {
+
+  //   // convert Buffer object to Float
+  //   temperatures.push(parseFloat(data));
+  //   console.log(temperatures);
+  //   });
+  // }
 
   
   // Function to open the panel and display data
